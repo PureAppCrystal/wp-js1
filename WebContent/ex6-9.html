@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	//remove 함수를 모든 배열객체에 추가
+	Array.prototype.removeAt = function( index ) {
+		this.splice( index, 1 );
+	}
+	
+	//insert 함수를 모든 배열객체에 추가
+	Array.prototype.insertAt = function( index, item ) {
+		this.splice( index, 0, item );
+	}
+
+	
+	//concat
+	var a1 = [ "Cecilie", "Lone" ];
+	var a2 = [ "Emil", "Tobias", "Linus" ];
+	var a3 = a1.concat(a2);
+	
+	console.log( a1 );
+	console.log( a2 );
+	console.log( a3 );
+	
+	//join
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	console.log(fruits.join(":"));
+	
+	//push
+	fruits.push( "Grape" );
+	console.log(fruits.join(":"));
+	
+	//pop
+	console.log(fruits.pop());
+	console.log("pop : " + fruits.join(":"));
+	
+	//reverse
+	fruits.reverse();
+	console.log("reverse : " + fruits.join(":"));
+	
+	//shift
+	fruits.shift();
+	console.log("shift : " + fruits.join(":"));
+	
+	
+	
+	//slice
+	fruits.push( "Melon" );
+	fruits.push( "Watermelon" );
+	console.log(fruits.join(":"));
+	var fruits2 = fruits.slice(1,3);
+	console.log(fruits2);
+	
+	//sort
+	fruits.sort();
+	console.log("sort : "+fruits.join(":"));
+	
+	//splice - 삭제
+	fruits.splice( 1, 2 );
+	console.log("splice : "+fruits.join(":"));
+	
+	//사용자 정의 함수 remove
+	fruits.removeAt(1);
+	console.log("remove : "+fruits.join(":"));
+
+	//splice - 삽입
+	fruits.splice( 1, 0, "Pear" );
+	console.log("splice : "+fruits.join(":"));	
+	
+	//사용자 정의함수 insert
+	fruits.insertAt(2, "Pineapple");
+	console.log("insert : "+fruits.join(":"));
+	
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

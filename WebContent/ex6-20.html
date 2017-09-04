@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="browser-detect.js"></script>
+<script type="text/javascript">
+
+
+
+	window.addEventListener( "load", function() {
+		//new page
+		console.log("load");
+		console.log("-----------------------");
+		
+		//BrowserDetect init(Navigator)
+		BrowserDetect.init();
+		
+		
+		console.log("userAgent  : " + navigator.userAgent);
+		console.log("appVersion : " + navigator.appVersion);
+		console.log("");
+		
+		console.log("os      : " + BrowserDetect.OS);
+		console.log("browser : " + BrowserDetect.browser);
+		console.log("version : " + BrowserDetect.version);
+		console.log("");
+		
+		//location object
+		document.getElementById( "btn-reload" ).
+		addEventListener("click", function() {
+			//location.reload( false ); //F5
+			location.reload( true );    //ctrl + F5
+		});
+		
+		//navigator    * cookieEnabled : enable to use cookie
+		if( navigator.cookieEnabled ) {
+			console.log( "enabled cookie" );
+		} else {
+			console.log( "unabled cookie" );
+		}
+		
+		
+		//history 
+		document.getElementById( "btn-prev" ).
+		addEventListener("click", function() {
+			history.go( -1 );
+		});
+		
+		
+		
+		
+	})
+
+
+	window.addEventListener( "unload", function() {
+		//leaving page
+		console.log("unload");
+	})
+	
+	
+	
+
+
+/*
+function onLoad() {
+	
+	document.getElementById("myBtn").onclick = function(){
+	   displayDate();
+	};
+	
+	
+	document.getElementById("myBtn").onclick = displayDate;
+}
+
+function displayDate(){
+   document.getElementById("demo").innerHTML = Date();
+}
+*/
+
+</script>
+
+</head>
+
+<!-- <body onload="onLoad();"> -->
+<body>
+	<div id="btn-reload">reload</div>
+	<div id="btn-prev">pre page</div>
+	
+	
+	<!-- 
+	<p>버튼을 클릭하면  <em>displayDate()</em> 함수가 실행 됩니다.</p>
+	<button id="myBtn">Try it</button>
+	<p id="demo"></p>
+	 -->
+</body>
+</html>

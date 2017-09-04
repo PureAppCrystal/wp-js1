@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	window.addEventListener( "load", function(){
+		var elF = document.getElementById( "my-form" );
+		elF.onsubmit = function(){
+			console.log("submit");
+			
+			//id is empty?
+			var idInput = document.getElementById( "my-input" );
+			if ( idInput.value == "" ) {
+				alert( "need to input ID");
+				
+				var elP = document.getElementById( "my-p");
+				elP.innerHTML = "need to input ID";
+				
+				return false;
+			}
+			
+			return true;
+		};
+	});
+
+
+
+/*
+function myFunction() {
+   var x = document.getElementById( "fname" );
+   x.value=x.value.toUpperCase();
+}
+
+function selectChanged(){
+	alert("!");
+}
+*/
+</script>
+</head>
+<body>
+	<form id="my-form" action="join" method="post">
+		<select onchange="my-sel">
+			<option>value1</option>
+			<option>value2</option>
+			<option>value3</option>
+			<option>value4</option>
+			<option>value5</option>
+		</select>
+		<br>
+		
+		아이디 입력: <br>
+		<input type="text" id="my-input"> <br>
+		<input type="submit" value="join">
+	</form>
+	<p id="my-p">
+		INPUT에 포커스가 없어지면, 이전 값이 변했는 지 판단해서 항상 대문자로 만드는 예제입니다.
+	</p>
+</body>
+
+</html>

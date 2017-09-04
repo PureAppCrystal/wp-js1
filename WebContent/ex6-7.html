@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	var a = new Array(10);
+	
+	console.log(a.length);
+	
+	a[0] = 0;
+	a[1] = 1;
+	a[10] = 10;
+	a[20] = 20;
+	
+	console.log(a.length);
+	console.log(a);
+	
+	
+	var a1 = new Array(1, "Hello", true );
+	console.log(a1);
+	
+	//추천
+	var a2 = [];
+	a2[100] = 100;
+	console.log(a2);
+
+	var colors = ["blue", "black", "red", "green"];
+	for(var i=0; i < colors.length; i++) {
+		
+		
+		document.write(
+				"<div style='" +
+				"left:"              + "0px;"  +
+				"top:"               + (i+1)*200    + "px;"  +
+				"width:"             + "200px;"  +
+				"height:"            + "200px;" +
+				"background-color:"  + colors[i] + ";"    +
+				"'>" +
+				"</div>");
+	}
+
+
+
+
+/*
+var colors = ["blue", "black", "red", "green"];
+var size = colors.length;
+
+for(var i = 0; i < size; i++){
+	document.write(
+			"<div style='"	+
+			
+			"width:100px;"	+
+			
+			"height:100px;"	+
+			
+			"background-color:"  + colors[i] + ";"    +
+			
+			"'>" +
+			
+			"</div>" );
+	
+}
+
+*/
+</script>
+</head>
+<body>
+
+</body>
+</html>
